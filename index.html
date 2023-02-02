@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id ="ct2"> COUNTDOWN </title>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/703649061139382403/1066270410527752272/logo.png">
+    <style>
+    
+        body {background-color: black;}
+        h1 {color:#fcf400; font-family: monospace; text-align: center; font-size: 75px; position: relative; animation: change 20s ease-in-out infinite;}
+        p {color: white; font-family: monospace; text-align: center; font-size: 15px;}
+        img {
+            pointer-events: none; 
+            position: relative;
+        }
+        .ap {
+            animation: fading 50s ease-in-out;
+            position: relative;
+        }
+
+        @media screen and (max-width: 1000px) {
+            h1 {
+                color:#fcf400;
+                text-align: center;
+                font-family:monospace;
+                font-size: 30px;
+                position: relative;       
+            }
+
+            img {
+                width: 100px;
+                margin-left: auto;
+                margin-top:75%;
+                position: relative;
+            }
+        }
+
+        @keyframes fading {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes change {
+            0%{
+                color:#fcf400;
+            }
+            50% {
+                color:goldenrod;
+            }
+            100% {
+                color: #fcf400;;
+            }
+        }
+
+    </style>
+    <script>
+        document.addEventListener('click', musicPlay);
+        function musicPlay() {
+        document.getElementById('play').play();
+        document.removeEventListener('click', musicPlay);
+        }
+
+    </script>
+    </head>
+<body>
+    
+    <h1 id="ct"> YY : YY : YY : YY</h1>
+    
+    <table style="margin-left: auto; margin-right: auto; margin-top:5%">
+        <tr>
+            <td> <img class="ap" src="https://cdn.discordapp.com/attachments/703649061139382403/1066268589268672554/side1.gif"> </td> 
+            <td> 
+    <center> 
+    
+        <img src="https://cdn.discordapp.com/attachments/703649061139382403/1066259670844592179/boss.gif">
+        
+    </center>
+    </td>   
+    <td> <img class ="ap" src="https://cdn.discordapp.com/attachments/703649061139382403/1066269624280305724/side2.gif"> </td> 
+
+    </tr>
+    </table>
+
+    <audio autoplay id="play" onloadeddata="lower()">
+        <source src="ctdwn.mp3" type="audio/mpeg">
+    </audio>
+    <script src="scriptek.js"> </script>
+
+    
+    </body>
+
+
+</html>
