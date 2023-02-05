@@ -1,7 +1,7 @@
 var audio = document.getElementById("play");
 
 
-console.log("https://www.youtube.com/watch?v=jW7sDih_CpQ");
+let v = "aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1qVzdzRGloX0NwUQ==";
 
 let dest = new Date("Feb 20, 2023 00:00:00");
 
@@ -19,8 +19,16 @@ setInterval(() => {
     var perc = Math.floor((tav % (1000 * 60 * 60)) / (1000 * 60));
     var mp = Math.floor((tav % (1000 * 60)) / 1000);
 
-    document.getElementById("ct").innerHTML = `${nap} : ${ora} : ${perc} : ${mp}`;
-    document.getElementById("ct2").innerHTML = `${nap} : ${ora} : ${perc} : ${mp}`;
+    let formazando = [nap,ora,perc,mp];
+    for (let i = 0; i < formazando.length; i++) {
+        if(formazando[i] < 10) {
+            formazando[i] = "0"+formazando[i];
+        }
+        
+    }
+
+    document.getElementById("ct").innerHTML = `${formazando[0]} : ${formazando[1]} : ${formazando[2]} : ${formazando[3]}`;
+    document.getElementById("ct2").innerHTML = `${formazando[0]} : ${formazando[1]} : ${formazando[2]} : ${formazando[3]}`;
 
     if(tav < 0) {
         clearInterval();
