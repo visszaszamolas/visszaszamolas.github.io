@@ -3,7 +3,7 @@ var audio = document.getElementById("play");
 
 let v = "aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1qVzdzRGloX0NwUQ==";
 
-let dest = new Date("Feb 20, 2023 00:00:00");
+let dest = new Date("Feb 19, 2023 23:30:00");
 
 function lower() {
         audio.volume = 0.25;
@@ -32,8 +32,7 @@ setInterval(() => {
 
     if(tav < 0) {
         clearInterval();
-        document.getElementById("ct").innerHTML = "-----";
-        document.getElementById("ct2").innerHTML = "-----";
+        window.location.href = "https://www.youtube.com/playlist?list=PLK15uKRMQy-2SMM_sQlwSbFIL_QvDxpSE";
 
     }
 }, 1000);
