@@ -44,7 +44,10 @@ setInterval(() => {
     document.getElementById("ct2").innerHTML = `${formazando[0]} : ${formazando[1]} : ${formazando[2]} : ${formazando[3]}`;
     document.getElementById("ctFinal").innerHTML = `🟣 ${formazandoFinal[0]} : ${formazandoFinal[1]} : ${formazandoFinal[2]} : ${formazandoFinal[3]}`;
 
-    if(tav < 0) {
+    if(tavFinal < 0) {
+        clearInterval();
+        window.location.href = "https://www.twitch.tv/kriszhadvice";
+    } else if(tav < 0) {
         clearInterval();
         window.location.href = "https://www.youtube.com/playlist?list=PLK15uKRMQy-2SMM_sQlwSbFIL_QvDxpSE";
 
