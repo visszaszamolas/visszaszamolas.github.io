@@ -1,9 +1,10 @@
 var audio = document.getElementById("play");
 let effect = document.getElementById("coreEffect");
+let tunes = document.getElementById("cl");
 let playable = false;
 
 
-let dest = new Date("March 20, 2023 00:00:00");
+let dest = new Date("April 20, 2023 00:00:00");
 let finale = new Date("May 20, 2023 16:00:00");
 
 
@@ -55,9 +56,9 @@ setInterval(() => {
 }, 1000);
 
 audio.onended = function() {  
-    audio.volume = 0.5;
-    audio.setAttribute("src", `ctdwn_phase3.mp3`);
-    audio.volume = 0.5;
+    audio.volume = 0.15;
+    audio.setAttribute("src", `ctdwn_phase4.mp3`);
+    audio.volume = 0.15;
 }
 
 effect.onended = function() {
@@ -67,8 +68,14 @@ effect.onended = function() {
   function coreSound() {
       if(playable) {
         effect.setAttribute("src", 'core.mp3');
-        effect.volume = 0.5;
+        effect.volume = 0.2;
         effect.play();
         playable = false;
       } 
+ }
+
+ document.onclick = function() {
+    tunes.setAttribute("src", "clickMusic.mp3");
+    tunes.volume = 0.15;
+    tunes.play();
  }
