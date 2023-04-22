@@ -7,25 +7,54 @@
     <link rel="icon" href="https://cdn.discordapp.com/attachments/703649061139382403/1066270410527752272/logo.png">
     <style>
     
-        body {background-color: #050117;}
-        h1 {color:white; font-family: monospace; text-align: center; font-size: 75px; position: relative; animation: change 20s ease-in-out infinite;}
-        h2 {color:white; font-family: monospace; text-align: center; font-size: 50px; position: relative; animation: change 20s ease-in-out infinite;}
+        body {
+            background-color: #050117; 
+            animation: colorize 20s ease-in-out infinite;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        h1 {
+            color:white; 
+            font-family: monospace;
+            font-weight: bolder;
+            text-align: center;
+            font-size: 80px; 
+            position: absolute; 
+            animation: change 30s ease-in-out infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+        }
         p {color: white; font-family: monospace; text-align: center; font-size: 15px;}
-        img {
-            user-select: none;
-            position: relative;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-drag: none;
-            -webkit-user-drag: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .ap {
-            animation: fading 50s ease-in-out;
-            position: relative;
-            background-color: #050117;
-        }
+     
+        :after, :before {
+        content: "";
+        position:fixed;
+        z-index: -2;
+        top: 0;
+        width: 100vw;  
+        height: 100vh; 
+        width: 100vmax;
+        height: 100vmax;
+        background: rgba(0, 0, 0, 0.100);
+        animation: bg 90s linear infinite;
+        pointer-events: none;
+
+    }
+
+    :after {
+        left: 15vw;
+    }
+
+    :before {
+        pointer-events: none;
+        right: 15vw;
+        animation-delay: -30s;
+        animation-direction: reverse;
+    
+    }
+
 
         @media screen and (max-width: 1000px) {
             h1 {
@@ -51,26 +80,41 @@
             }
         }
 
-        @keyframes fading {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
 
         @keyframes change {
             0%{
                 color:white;
             }
             50% {
-                color:#b4aed4;
+                color: #332559;
             }
             100% {
                 color: white;;
             }
         }
+
+        @keyframes colorize {
+            0%{
+                background:#050117;
+            }
+            75% {
+                background:#0f0a1f;
+            }
+
+            100% {
+                background: #050117;;
+            }
+        }
+
+        @keyframes bg {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
     </style>
     <script>
@@ -78,39 +122,18 @@
         function musicPlay() {
         document.getElementById('play').play();
         document.removeEventListener('click', musicPlay);
-        playable = true;
         }
         
     </script>
     </head>
 <body>
     
-    <h1 id="ct"> YY : YY : YY : YY</h1>
+    <h1 id="ctFinal"> YY : YY : YY : YY</h1>
     
-    <table style="margin-left: auto; margin-right: auto; margin-top:5%">
-        <tr>
-            <td> <img class="ap" src="https://cdn.discordapp.com/attachments/703649061139382403/1078948882232397884/side1_2.gif"> </td> 
-            <td> 
-    <center> 
-    
-        <img id="core" src="https://cdn.discordapp.com/attachments/703649061139382403/1078759040257106032/core.gif" onmouseover="coreSound()">
-        
-    </center>
-    </td>   
-    <td> <img class ="ap" src="https://cdn.discordapp.com/attachments/703649061139382403/1078947828904243210/side2_1.gif"> </td> 
-
-    </tr>
-    </table>
-    <h2 id="ctFinal">🟣 YY : YY : YY : YY</h2>
     <audio autoplay id="play" onloadeddata='document.getElementById("play").volume = 0.15;'>
-        <source src="ctdwn_phase4.mp3" type="audio/mpeg">
+        <source src="ctdwn_phase5.mp3" type="audio/mpeg">
     </audio>
-    <audio id="coreEffect">
-        <source src="" type="audio/mpeg">
-    </audio>
-    <audio id="cl">
-        <source src="" type="audio/mpeg"> 
-    </audio>
+ 
     <script src="scriptek.js"> </script>
    
     </body>
