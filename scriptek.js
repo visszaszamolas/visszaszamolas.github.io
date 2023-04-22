@@ -1,8 +1,4 @@
 var audio = document.getElementById("play");
-let effect = document.getElementById("coreEffect");
-let tunes = document.getElementById("cl");
-let playable = false;
-
 
 let dest = new Date("April 20, 2023 00:00:00");
 let finale = new Date("May 20, 2023 16:00:00");
@@ -41,41 +37,25 @@ setInterval(() => {
     
 
 
-    document.getElementById("ct").innerHTML = `${formazando[0]} : ${formazando[1]} : ${formazando[2]} : ${formazando[3]}`;
-    document.getElementById("ct2").innerHTML = `${formazando[0]} : ${formazando[1]} : ${formazando[2]} : ${formazando[3]}`;
-    document.getElementById("ctFinal").innerHTML = `🟣 ${formazandoFinal[0]} : ${formazandoFinal[1]} : ${formazandoFinal[2]} : ${formazandoFinal[3]}`;
+    //document.getElementById("ct").innerHTML = `${formazandoFinal[0]} : ${formazandoFinal[1]} : ${formazandoFinal[2]} : ${formazandoFinal[3]}`;
+    document.getElementById("ct2").innerHTML = `${formazandoFinal[0]} : ${formazandoFinal[1]} : ${formazandoFinal[2]} : ${formazandoFinal[3]}`;
+    document.getElementById("ctFinal").innerHTML = `${formazandoFinal[0]} : ${formazandoFinal[1]} : ${formazandoFinal[2]} : ${formazandoFinal[3]}`;
 
     if(tavFinal < 0) {
         clearInterval();
         window.location.href = "https://www.twitch.tv/kriszhadvice";
-    } else if(tav < 0) {
+    } /*else if(tav < 0) {
         clearInterval();
         window.location.href = "https://www.youtube.com/playlist?list=PLK15uKRMQy-2SMM_sQlwSbFIL_QvDxpSE";
 
-    }
+    }*/
 }, 1000);
 
 audio.onended = function() {  
     audio.volume = 0.15;
-    audio.setAttribute("src", `ctdwn_phase4.mp3`);
+    audio.setAttribute("src", `ctdwn_phase5.mp3`);
     audio.volume = 0.15;
 }
 
-effect.onended = function() {
-    playable = true;
-}
 
-  function coreSound() {
-      if(playable) {
-        effect.setAttribute("src", 'core.mp3');
-        effect.volume = 0.2;
-        effect.play();
-        playable = false;
-      } 
- }
 
- document.onclick = function() {
-    tunes.setAttribute("src", "clickMusic.mp3");
-    tunes.volume = 0.15;
-    tunes.play();
- }
