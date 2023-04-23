@@ -1,3 +1,6 @@
+@font-face { font-family: Gotham_Black; src: url('gotham.ttf');} 
+.fnt { font-family: Gotham_Black; font-variant-numeric: tabular-nums lining-nums;}
+
 body {
     background-color: #050117; 
     animation: colorize 20s ease-in-out infinite;
@@ -6,7 +9,6 @@ body {
 }
 h1 {
     color:white; 
-    font-family: monospace;
     font-weight: bolder;
     text-align: center;
     font-size: 80px; 
@@ -16,8 +18,11 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+
 }
 p {color: white; font-family: monospace; text-align: center; font-size: 15px;}
+
+
 
 :after, :before {
 content: "";
@@ -89,7 +94,7 @@ animation-direction: reverse;
         background:#050117;
     }
     75% {
-        background:#0f0a1f;
+        background:#160e29;
     }
 
     100% {
