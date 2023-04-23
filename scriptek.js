@@ -52,9 +52,9 @@ setInterval(() => {
 }, 1000);
 
 audio.onended = function() {  
-    audio.volume = 0.15;
+    audio.volume = 0.2;
     audio.setAttribute("src", `ctdwn_phase5.mp3`);
-    audio.volume = 0.15;
+    audio.volume = 0.2;
 }
 
 
